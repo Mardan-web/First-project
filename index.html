@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartu nama</title>
+  <style>
+    *{
+      font-family: sans-serif !important;
+    }
+   .container{
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+    .card{
+      text-align: center;
+      background-color: rebeccapurple;
+      max-width: 320px;
+      width: 85%;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,2);
+      color: #ffffff;
+      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .tombol{
+      background-color: lightgrey;
+      border-radius: 5px;
+      color: #1A1A1A;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tombol:active{
+      background-color: #b0b0b0 !important;
+      transform: scale(0.95);
+      color: #000000 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="card">
+  <h2>Randi Mardan</h2>
+  <p id="ucapan-waktu">Menggunakan HTML dan CSS untuk membuat halaman web sederhana</p>
+  <button id="btn-hubungi" class="tombol">Hubungi saya</button>
+  </div>
+  </div>
+<script>
+  const teksUcapan = document.getElementById('ucapan-waktu')
+  const jamSekarang = new Date().getHours()
+  if (jamSekarang >= 5 && jamSekarang < 11){
+  teksUcapan.innerText = "Selamat pagi!"
+  } else if (jamSekarang >= 11 && jamSekarang < 15){
+  teksUcapan.innerText = "Selamat siang!"
+  } else if (jamSekarang >= 15 && jamSekarang < 18){
+  teksUcapan.innerText = "Selamat sore!"
+  } else {
+  teksUcapan.innerText = "Selamat malam!"
+  }
+  
+  const tombol = document.getElementById('btn-hubungi');
+  tombol.addEventListener('click', function(){
+  alert('Halo! Terima kasih sudah berkunjung.');
+  });
+</script>
+</body>
+</html>
